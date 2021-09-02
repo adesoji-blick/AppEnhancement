@@ -1,0 +1,7 @@
+---
+- hosts: tag_Name_prod_app_server
+  become: True
+  tasks:
+    - name: build docker app image
+      ansible.builtin.command:
+        cmd: sudo docker build -t project-app:latest .
