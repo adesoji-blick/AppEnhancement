@@ -8,12 +8,12 @@ pipeline {
             // DEV_SERVER_IP="3.98.127.20"
         } 
     stages {
-        stage('install dependencies') {
-            steps {
-                // Installing ansible dependencies
-                sh "sh jenkins_dep.sh"        
-            }
-        }
+        // stage('install dependencies') {
+        //     steps {
+        //         // Installing ansible dependencies
+        //         sh "sh jenkins_dep.sh"        
+        //     }
+        // }
         stage('Run Ansible playbook') {
             steps {
                 // Run ansible playbook for project 
