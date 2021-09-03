@@ -10,18 +10,18 @@ pipeline {
             // DEV_SERVER_IP="3.98.127.20"
         } 
     stages {
-        // stage('install dependencies') {
-        //     steps {
-        //         // Installing ansible dependencies
-        //         sh "sh jenkins_dep.sh"        
-        //     }
-        // }
+        stage('install dependencies') {
+            steps {
+                // Installing ansible dependencies
+                sh "sh jenkins_dep.sh"        
+            }
+        }
         stage('Run Ansible playbook') {
             steps {
                 // Run ansible playbook for project 
                 sh "ls -ltr"
-                // sh "ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible2', inventory: 'ec2.py', playbook: 'prod.yml'"       
-                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py prod.yml" 
+                sh "ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible2', inventory: 'ec2.py', playbook: 'prod.yml'"       
+                // sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py prod.yml" 
             }
         }
     }
