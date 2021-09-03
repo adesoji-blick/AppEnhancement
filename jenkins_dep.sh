@@ -4,10 +4,10 @@
 # sudo su - ansible
 
 # export environment variables
-# export AWS_ACCESS_KEY_ID='xxxxxxxx'
-# export AWS_SECRET_ACCESS_KEY='xxxxxxxx'
-export ANSIBLE_HOSTS=/inventory/ec2.py
-export EC2_INI_PATH=/inventory/ec2.ini
+export AWS_ACCESS_KEY_ID='xxxxxxxx'
+export AWS_SECRET_ACCESS_KEY='xxxxxxxx'
+export ANSIBLE_HOSTS=ec2.py
+export EC2_INI_PATH=ec2.ini
 
 # Prepare Ansible dynamic inventory
 ansible-galaxy collection install amazon.aws
@@ -17,3 +17,7 @@ python get-pip.py
 # Install Boto
 # pip install boto3
 pip install boto
+
+# Access Mgt
+chmod 755 inventory/ec2.py
+chmod 755 inventory/ec2.ini
