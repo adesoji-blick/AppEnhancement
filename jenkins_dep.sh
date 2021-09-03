@@ -13,8 +13,8 @@ export EC2_INI_PATH=ec2.ini
 
 # Prepare Ansible dynamic inventory
 echo installing dependencies pip 
-sudo amazon-linux-extras install epel
-sudo ansible-galaxy collection install amazon.aws
+amazon-linux-extras install epel
+ansible-galaxy collection install amazon.aws
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 python get-pip.py
 
