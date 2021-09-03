@@ -14,12 +14,12 @@ pipeline {
                 sh "sh jenkins_dep.sh"        
             }
         }
-        // stage('Run Ansible playbook') {
-        //     steps {
-        //         // Run ansible playbook for project 
-        //         sh "ls -ltr"
-        //         sh "ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible2', inventory: 'ec2.py', playbook: 'prod.yml'"        
-        //     }
-        // }
+        stage('Run Ansible playbook') {
+            steps {
+                // Run ansible playbook for project 
+                sh "ls -ltr"
+                sh "ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible2', inventory: 'ec2.py', playbook: 'prod.yml'"        
+            }
+        }
     }
 }
