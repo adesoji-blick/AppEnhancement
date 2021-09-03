@@ -24,5 +24,5 @@ pip install boto
 
 # permission Mgt
 echo setting dynamic inventory permissions
-chmod 755 inventory/ec2.py
-chmod 755 inventory/ec2.ini
+chmod 755 ec2.py
+chmod 755 ec2.ini
