@@ -6,6 +6,8 @@ pipeline {
             AWS_DEFAULT_REGION    = credentials ('AWS_DEFAULT_REGION')
             ANSIBLE_HOSTS="ec2.py"
             EC2_INI_PATH="ec2.ini"
+            PIP_PATH="/home/jenkins/.local/bin"
+            WHEEL_PATH="/home/jenkins/.local/bin"
             // PROD_SERVER_IP="35.182.224.12"
             // DEV_SERVER_IP="3.98.127.20"
         } 

@@ -1,5 +1,5 @@
 ---
-- hosts: tag_Name_jenkins_server
+- hosts: tag_Name_jenkins_server_local
   become: True
   tasks:
     - name: build docker app image
