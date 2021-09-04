@@ -18,7 +18,10 @@ pipeline {
         }
         stage('Run Ansible playbook') {
             steps {
-                // Run ansible playbook for project   
+                // Run ansible playbook for project 
+                sh "pwd"
+                sh "ls -ltr"
+                // sh "ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible2', inventory: 'ec2.py', playbook: 'prod.yml'"       
                 sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py prod.yml" 
             }
         }
