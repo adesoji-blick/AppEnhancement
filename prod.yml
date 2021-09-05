@@ -4,7 +4,7 @@
   tasks:
     - name: build docker app image
       ansible.builtin.command:
-        cmd: docker build -t project-app:latest -f --file /var/lib/jenkins/workspace/LocalApp_Build_master/Dockerfile
+        cmd: docker build -t project-app:latest -f --file /var/lib/jenkins/workspace/LocalApp_Build_master
 
     - name: tag docker app image
       ansible.builtin.command:
