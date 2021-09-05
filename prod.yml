@@ -8,7 +8,7 @@
 
     - name: tag docker app image
       ansible.builtin.command:
-        cmd: docker tag project-app:latest blickng/project-app-prod:latest
+        cmd: cd /var/lib/jenkins/workspace/LocalApp_Build_master/ && docker tag project-app:latest blickng/project-app-prod:latest
 
     # - name: login to docker repo
     #   ansible.builtin.command:
@@ -16,7 +16,7 @@
 
     - name: login to docker repo
       ansible.builtin.command:
-        cmd: docker push blickng/direction-app-prod:latest
+        cmd: cd /var/lib/jenkins/workspace/LocalApp_Build_master/ && docker push blickng/direction-app-prod:latest
 
 - hosts: tag_Name_prod_app_server
   become: True
