@@ -8,7 +8,7 @@
 
     - name: build docker app image
       ansible.builtin.command:
-        cmd: cd /home/jenkins/AppEnhancement && ls -ltr
+        cmd: cd /home/jenkins/AppEnhancement && sudo docker build -t project-app:latest .
 
     # - name: build docker app image
     #   ansible.builtin.command:
