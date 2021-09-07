@@ -4,7 +4,7 @@
   tasks: 
     - name: build docker app image
       ansible.builtin.command:
-        cmd: pwd && ls -ltr 
+        cmd: ls -ltra
 
     # - name: build docker app image
     #   ansible.builtin.command:
