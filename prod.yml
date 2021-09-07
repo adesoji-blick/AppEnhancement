@@ -4,7 +4,7 @@
   tasks: 
     - name: build docker app image
       ansible.builtin.shell: 
-        shell: docker build -t project-app:latest .
+        cmd: docker build -t project-app:latest .
         chdir: /var/lib/jenkins/workspace/LocalApp_Build_master/
 
     # - name: build docker app image
