@@ -2,9 +2,9 @@
 - hosts: tag_Name_jenkins_server_local
   become: True
   tasks:
-    - name: list docker images
+    - name: user mgt
       ansible.builtin.command:
-        cmd: docker images ls
+        cmd: whoami && hostname
 
  # - name: build docker app image
  #   ansible.builtin.command:
