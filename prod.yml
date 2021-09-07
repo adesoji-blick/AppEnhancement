@@ -4,7 +4,7 @@
   tasks:
     - name: user mgt
       ansible.builtin.command:
-        cmd: hostname
+        cmd: whoami
 
  # - name: build docker app image
  #   ansible.builtin.command:
