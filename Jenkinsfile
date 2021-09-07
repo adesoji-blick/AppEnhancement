@@ -22,7 +22,7 @@ pipeline {
                 sh "pwd"
                 sh "ls -ltr"
                 // sh "ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible2', inventory: 'ec2.py', playbook: 'prod.yml'"       
-                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py -v prod.yml" 
+                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py -vvvvv prod.yml" 
             }
         }
     }
