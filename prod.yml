@@ -2,10 +2,6 @@
 - hosts: tag_Name_jenkins_server_local
   become: True
   tasks: 
-    - name: get current working directory
-      ansible.builtin.command:
-        cmd: pwd
-
     - name: build docker app image
       ansible.builtin.command:
         cmd: cp -R /var/lib/jenkins/workspace/LocalApp_Build_master/ /home/ansible/
