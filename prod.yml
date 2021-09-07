@@ -3,12 +3,9 @@
   become: True
   tasks: 
     - name: build docker app image
-      ansible.builtin.command:
-        cmd: cp -R /var/lib/jenkins/workspace/LocalApp_Build_master/ /home/ansible/
-
-    - name: build docker app image
-      ansible.builtin.command:
-        cmd: cd /home/ansible/LocalApp_Build_master && sudo docker build -t project-app:latest .
+      ansible.builtin.shell: 
+        shell: docker build -t project-app:latest .
+        chdir: /var/lib/jenkins/workspace/LocalApp_Build_master/
 
     # - name: build docker app image
     #   ansible.builtin.command:
