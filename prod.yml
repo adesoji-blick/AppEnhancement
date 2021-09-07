@@ -14,9 +14,9 @@
     #   ansible.builtin.command:
     #     cmd: docker login -u blickng -p $dockerpassword
 
-    # - name: push image to docker repo
-    #   ansible.builtin.command:
-    #     cmd: docker push blickng/project-app-prod:latest
+    - name: push image to docker repo
+      ansible.builtin.command:
+        cmd: docker push blickng/project-app-prod:latest
 
 - hosts: tag_Name_prod_app_server
   become: True
