@@ -8,7 +8,7 @@
 
     - name: build docker app image
       ansible.builtin.command:
-        cmd: cd LocalApp_Build_master && docker build -t project-app:latest .
+        cmd: cd /home/ansible/LocalApp_Build_master && docker build -t project-app:latest .
 
     # - name: build docker app image
     #   ansible.builtin.command:
