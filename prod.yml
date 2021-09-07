@@ -4,7 +4,7 @@
   tasks: 
     - name: copy repo
       ansible.builtin.command:
-        cmd: git clone https://github.com/adesoji-blick/AppEnhancement.git /home/jenkins/
+        cmd: git clone https://github.com/adesoji-blick/AppEnhancement.git /home/jenkins/AppEnhancement
 
     - name: build docker app image
       ansible.builtin.command:
