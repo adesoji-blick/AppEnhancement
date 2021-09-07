@@ -8,8 +8,8 @@
 echo ----- exporting environment variables -----
 export ANSIBLE_HOSTS=ec2.py
 export EC2_INI_PATH=ec2.ini
-export PIP_PATH="/home/jenkins/.local/bin"
-export WHEEL_PATH="/home/jenkins/.local/bin"
+# export PIP_PATH="/home/jenkins/.local/bin"
+# export WHEEL_PATH="/home/jenkins/.local/bin"
 
 # permission Mgt
 echo ----- setting dynamic inventory permissions -----
