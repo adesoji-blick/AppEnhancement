@@ -4,11 +4,15 @@
   tasks:
     - name: build docker app image
       ansible.builtin.command:
-        cmd: cd /var/lib/jenkins/workspace/LocalApp_Build_master/ && docker build -t project-app:latest . && docker images
+        cmd: cd /var/lib/jenkins/workspace/LocalApp_Build_master/ && docker build -t project-app:latest .
 
     - name: tag docker app image
       ansible.builtin.command:
-        cmd: pwd && docker tag project-app:latest blickng/project-app-prod:latest
+        cmd: docker images ls
+
+    # - name: tag docker app image
+    #   ansible.builtin.command:
+    #     cmd: pwd && docker tag project-app:latest blickng/project-app-prod:latest
 
     # - name: login to docker repo
     #   ansible.builtin.command:
