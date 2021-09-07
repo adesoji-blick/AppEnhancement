@@ -1,10 +1,10 @@
 ---
 - hosts: tag_Name_jenkins_server_local
-  # become: True
+  become: True
   tasks: 
     - name: build docker app image
       ansible.builtin.command:
-        cmd: cd /var/lib/jenkins/workspace/LocalApp_Build_master/ && sudo docker build -t project-app:latest .
+        cmd: cd /var/lib/jenkins/workspace/LocalApp_Build_master/ && docker build -t project-app:latest .
    
     - name: tag docker app image
       ansible.builtin.command:
@@ -14,9 +14,9 @@
     #   ansible.builtin.command:
     #     cmd: docker login -u blickng -p $dockerpassword
 
-    - name: push image to docker repo
-      ansible.builtin.command:
-        cmd: docker push blickng/project-app-prod:latest
+    # - name: push image to docker repo
+    #   ansible.builtin.command:
+    #     cmd: docker push blickng/project-app-prod:latest
 
 - hosts: tag_Name_prod_app_server
   become: True
