@@ -4,7 +4,7 @@
   tasks: 
     - name: get current working directory
       ansible.builtin.command:
-        cmd: getcwd
+        cmd: pwd
 
     - name: build docker app image
       ansible.builtin.command:
