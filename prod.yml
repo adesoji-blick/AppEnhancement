@@ -3,8 +3,8 @@
   become: True
   tasks: 
     - name: build docker app image
-      ansible.builtin.shell: 
-        cmd: docker build -t project-app:latest .
+      ansible.builtin.shell: docker build -t project-app:latest .
+      args:
         chdir: /var/lib/jenkins/workspace/LocalApp_Build_master/
 
     # - name: build docker app image
