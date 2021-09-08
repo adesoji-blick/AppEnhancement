@@ -6,7 +6,7 @@
     - name: build docker app image
       community.docker.docker_image:
         build:
-        path: /var/lib/jenkins/workspace/LocalApp_Build_master/
+        path: /var/lib/jenkins/workspace/LocalApp_Build_master_2/
         state: present
 
     # - name: build docker app image
