@@ -3,10 +3,11 @@
   gather_facts: no
   become: True
   tasks: 
-     community.docker.docker_image:
-      build:
-      path: /var/lib/jenkins/workspace/LocalApp_Build_master_2/
-      state: present
+    - name: build docker app image
+      community.docker.docker_image:
+        build:
+        path: ./var/lib/jenkins/workspace/LocalApp_Build_master/
+        state: present
 
     # - name: build docker app image
     #   ansible.builtin.command:
