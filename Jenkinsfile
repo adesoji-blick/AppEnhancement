@@ -3,8 +3,8 @@ pipeline {
         environment {
             ANSIBLE_HOSTS="ec2.py"
             EC2_INI_PATH="ec2.ini"
-            PIP_PATH="/home/jenkins/.local/bin"
-            WHEEL_PATH="/home/jenkins/.local/bin"
+            // PIP_PATH="/home/jenkins/.local/bin"
+            // WHEEL_PATH="/home/jenkins/.local/bin"
         } 
     stages {
         stage('install dependencies') {
@@ -13,13 +13,23 @@ pipeline {
                 sh "sh jenkins_task.sh"        
             }
         }
-        stage('Run Ansible playbook') {
+        stage('Manage Master Branch for Prod App') {
+            when {
+                branch "master"
+            }
             steps {
                 // Run ansible playbook for project App
-                sh "pwd"
-                sh "ls -ltr"
                 sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py -vvvvv prod.yml" 
             }
         }
+        stage('Manage Develop Branch for Test App') {
+            when {
+                branch "development"
+            }
+            steps {
+                // Run ansible playbook for test/dev App
+                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py -vvvvv dev.yml" 
+            }
+        }        
     }
 }
