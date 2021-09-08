@@ -7,8 +7,7 @@
       community.docker.docker_image:
         build:
           path: ./var/lib/jenkins/workspace/LocalApp_Build_master_2/Dockerfile
-        state: present
-
+  
     # - name: build docker app image
     #   ansible.builtin.command:
     #     cmd: cd /var/lib/jenkins/workspace/LocalApp_Build_master/ && docker build -t project-app:latest .
