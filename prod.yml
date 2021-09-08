@@ -9,7 +9,7 @@
    
     - name: tag docker app image
       ansible.builtin.command:
-        cmd: project-app:latest blickng/project-app-prod:latest
+        cmd: docker tag project-app:latest blickng/project-app-prod:latest
 
     - name: login to docker repo
       ansible.builtin.command:
