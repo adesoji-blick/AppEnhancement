@@ -19,10 +19,10 @@
 #       ansible.builtin.command:
 #         cmd: docker push blickng/project-app-prod:latest
 
-# - hosts: tag_Name_prod_app_server
-#   become: True
-#   tasks:
-#     - name: pull and run prod app docker image
-#       ansible.builtin.command:
-#         cmd: docker run -d -p 8080:8080 -e loginname=myname -e loginpass=mypass -e api_key=xxxxxxxx --name project-app-prod blickng/project-app-prod:latest
+- hosts: tag_Name_prod_app_server
+  become: True
+  tasks:
+    - name: pull and run prod app docker image
+      ansible.builtin.command:
+        cmd: docker run -d -p 8080:8080 -e loginname=myname -e loginpass=mypass -e api_key=xxxxxxxx --name project-app-prod blickng/project-app-prod:latest
 
