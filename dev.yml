@@ -24,4 +24,4 @@
   tasks:
     - name: pull and run prod app docker image
       ansible.builtin.command:
-        cmd: docker run -d -p 8080:8080 -e loginname=test -e loginpass=test -e api_key=AIzaSyAtdvUGhXvttX4ad5GAJ-HD4F0r9oRzOf0 --name project-app-dev blickng/project-app-dev:latest
+        cmd: docker run -d -p 8080:8080 -e loginname=test -e loginpass=test -e api_key=AIzaSyAtdvUGhXvttX4ad5GAJ-HD4F0r9oRzOf0 blickng/project-app-dev:latest
