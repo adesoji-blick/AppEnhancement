@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Run Ansible playbook') {
             steps {
-                // Run ansible playbook for project 
+                // Run ansible playbook for project App
                 sh "pwd"
                 sh "ls -ltr"
                 sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py -vvvvv prod.yml" 
