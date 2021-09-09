@@ -3,6 +3,7 @@ pipeline {
         environment {
             ANSIBLE_HOSTS="ec2.py"
             EC2_INI_PATH="ec2.ini"
+            // ANSIBLE_VAULT_KEY = credentials ('Ansible_Vault_Key')
             // PIP_PATH="/home/jenkins/.local/bin"
             // WHEEL_PATH="/home/jenkins/.local/bin"
         } 
