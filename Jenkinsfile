@@ -17,7 +17,7 @@ pipeline {
         stage('Run Ansible playbook') {
             steps {
                 // Run ansible playbook for project App
-                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py prod.yml --vault-pass-file ANSIBLE_VAULT_KEY" 
+                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py prod.yml --ask-vault-pass" 
             }
         }
     }
