@@ -2,6 +2,7 @@
 - hosts: localhost
   gather_facts: no
   become: True
+  vars_files: credentials
   tasks:  
     - name: build docker app image
       ansible.builtin.command:
@@ -13,7 +14,7 @@
 
     - name: login to docker repo
       ansible.builtin.command:
-        cmd: docker login -u blickng -p Aiyemonase2021
+        cmd: docker login -u blickng -p {{ dockerPassword }}
 
     - name: push image to docker repo
       ansible.builtin.command:
@@ -21,7 +22,8 @@
 
 - hosts: tag_Name_dev_app_server
   become: True
+  vars_files: credentials
   tasks:
     - name: pull and run prod app docker image
       ansible.builtin.command:
-        cmd: docker run -d -p 8080:8080 -e loginname=test -e loginpass=test -e api_key=xxxxxxxxxx --name project-app-prod blickng/project-app-dev:latest
+        cmd: docker run -d -p 8080:8080 -e loginname=test -e loginpass=test -e api_key={{ googleAPIKey }} --name project-app-prod blickng/project-app-dev:latest
