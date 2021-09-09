@@ -3,7 +3,7 @@
 - hosts: localhost
   gather_facts: no
   become: True
-  var_file: credentials
+  vars_files: credentials
   tasks:  
     - name: build docker app image
       ansible.builtin.command:
