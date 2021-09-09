@@ -1,7 +1,7 @@
 pipeline {
     agent any
         environment {
-            ANSIBLE_VAULT_PASS = credentials ('Ansible_Vault_Pass')
+            vaultCredentialsId='Ansible_Vault_Pass'
             ANSIBLE_HOSTS="ec2.py"
             EC2_INI_PATH="ec2.ini"
             PIP_PATH="/home/jenkins/.local/bin"
