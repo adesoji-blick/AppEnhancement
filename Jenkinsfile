@@ -1,7 +1,7 @@
 pipeline {
     agent any
         environment {
-            vaultCredentialsId='Ansible_Vault_Pass'
+            vaultCredentialsId='Ansible_Vault_Key'
             ANSIBLE_HOSTS="ec2.py"
             EC2_INI_PATH="ec2.ini"
             PIP_PATH="/home/jenkins/.local/bin"
@@ -17,7 +17,7 @@ pipeline {
         stage('Run Ansible playbook') {
             steps {
                 // Run ansible playbook for project App
-                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py prod.yml --ask-vault-pass" 
+                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py prod.yml --vault-pass-file" 
             }
         }
     }
