@@ -14,7 +14,7 @@
 
     - name: login to docker repo
       ansible.builtin.command:
-        cmd: docker login -u blickng -p {{ dockerPassword }}
+        cmd: docker login -u {{ dockerUserName }} -p {{ dockerPassword }}
 
     - name: push image to docker repo
       ansible.builtin.command:
