@@ -28,3 +28,5 @@ git clone https://github.com/adesoji-blick/AppEnhancement.git
 cd AppEnhancement
 sh jenkins_task.sh
 ```
+### Ansible_Vault_Key
+credentials.txt file contains dictionary for dockerUserName, dockerPassword and googleAPIkey with an Ansible-Vault decryption file set on Jenkins as 'Ansible_Vault_Key'
