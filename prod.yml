@@ -23,6 +23,7 @@
 
 - hosts: tag_Name_prod_app_server
   become: True
+  vars_files: credentials
   tasks:
     - name: pull and run prod app docker image
       ansible.builtin.command:
