@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Run ansible playbook for project App
                 withCredentials([string(credentialsId: 'Ansible_Vault_Pass', variable: '')]) {
-                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py prod.yml --ask-vault-pass=Ansible_Vault_Pass" 
+                sh "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ec2.py prod.yml --ask-vault-pass password" 
               }
             }
         }
