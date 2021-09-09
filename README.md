@@ -21,3 +21,10 @@ cp target/*.jar /tmp/direction.jar
 cp target/*.jar /tmp/direction.jar
 loginname=myname loginpass=mypass api_key=my_google_api_key java -jar /tmp/direction.jar
 ```
+
+### To deploy apps to remote machines manually
+```
+git clone https://github.com/adesoji-blick/AppEnhancement.git
+cd AppEnhancement
+sh jenkins_task.sh
+```
