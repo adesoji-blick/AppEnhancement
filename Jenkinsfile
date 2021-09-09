@@ -4,8 +4,6 @@ pipeline {
             ANSIBLE_VAULT_PASSWORD_FILE = credentials ('Ansible_Vault_Key')
             ANSIBLE_HOSTS="ec2.py"
             EC2_INI_PATH="ec2.ini"
-            PIP_PATH="/home/jenkins/.local/bin"
-            WHEEL_PATH="/home/jenkins/.local/bin"
         } 
     stages {
         stage('install dependencies') {
